@@ -8,20 +8,27 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+:root {
+  --gradient-angle: 0deg;
+}
+
 header h1 {
   text-align: center;
   font-size: 40px;
   color: white;
+  margin: 0;
 }
 
 header {
   padding: 40px;
-  background-color: rgb(17, 124, 143);
+  background: linear-gradient(to right, #011526, #117c8f);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav {
-  background-color: #333;
+  background: linear-gradient(to right, #011526, #333);
   overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
@@ -30,44 +37,67 @@ nav a {
   text-align: center;
   float: left;
   color: white;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #117c8f;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 main {
-  background-color: white;
+  background: linear-gradient(var(--gradient-angle), #011526, white);
   text-align: center;
+  transition: background 0.1s ease;
 }
 
 h2 {
   padding: 20px;
+  color: #333;
+  font-size: 28px;
 }
 
 section:nth-child(even) {
-  background-color: rgb(241, 241, 241);
+  background-color: rgba(241, 241, 241, 0.9);
 }
 
 section {
   min-height: 100vh;
+  padding: 20px;
 }
 
 video {
   padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
 iframe {
   height: 75vh;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
 img {
   padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
 section h5 {
   margin: 40px;
+  color: #666;
+  font-size: 18px;
 }
 
 footer {
-  background-color: #333;
+  background: linear-gradient(to right, #011526, #333);
   overflow: hidden;
+  padding: 20px 0;
 }
 
 footer a {
@@ -76,67 +106,273 @@ footer a {
   text-align: center;
   float: left;
   color: white;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Timeline Section */
+footer a:hover {
+  color: #117c8f;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .timeline {
   text-align: center;
-  padding: 50px 20px;
-  background-color: #f4f4f4;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.timeline-title {
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
+.timeline-bg {
+  padding: 60px 20px;
+  background: linear-gradient(
+    to right,
+    #012840,
+    #0f8c8c
+  ); /* Base sky gradient */
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
 }
 
-/* Timeline Container */
+.timeline-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Galaxy nebula effect */ radial-gradient(
+      circle at 30% 20%,
+      rgba(15, 140, 140, 0.3) 0%,
+      transparent 20%
+    ),
+    radial-gradient(circle at 70% 40%, rgba(1, 56, 90, 0.4) 0%, transparent 25%),
+    /* Stars */
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(255, 255, 255, 0.9) 1px,
+        transparent 2px,
+        circle at 25% 30%,
+        rgba(255, 255, 255, 0.7) 1.5px,
+        transparent 2.5px,
+        circle at 40% 15%,
+        rgba(255, 255, 255, 0.8) 1px,
+        transparent 2px,
+        circle at 55% 35%,
+        rgba(255, 255, 255, 0.9) 2px,
+        transparent 3px,
+        circle at 70% 20%,
+        rgba(255, 255, 255, 0.7) 1px,
+        transparent 2px,
+        circle at 85% 25%,
+        rgba(255, 255, 255, 0.8) 1.5px,
+        transparent 2.5px
+      );
+  z-index: 2;
+  pointer-events: none;
+  animation: twinkle 5s infinite alternate; /* Subtle animation for stars */
+}
+
+.timeline-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Mountain layer */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 30%,
+    #013a5a 30%,
+    #013a5a 100%
+  );
+  clip-path: polygon(
+    0 100%,
+    10% 40%,
+    20% 70%,
+    30% 30%,
+    40% 60%,
+    50% 20%,
+    60% 50%,
+    70% 30%,
+    80% 60%,
+    90% 40%,
+    100% 100%
+  );
+  z-index: 3; /* Mountains above galaxy */
+}
+
+.timeline-bg::after + .timeline-bg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; /* Second mountain layer */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 20%,
+    #024970 20%,
+    #024970 100%
+  );
+  clip-path: polygon(
+    0 100%,
+    15% 50%,
+    25% 80%,
+    35% 40%,
+    45% 70%,
+    55% 30%,
+    65% 60%,
+    75% 40%,
+    85% 70%,
+    95% 50%,
+    100% 100%
+  );
+  z-index: 4; /* Second mountain layer above first */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .timeline-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 5;
 }
 
-/* Timeline Items */
+.timeline-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: fade-in-title 1s ease-in-out forwards;
+  position: relative;
+  z-index: 5;
+  font-family: "Cinzel", serif;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-title:hover {
+  color: #03344f;
+  transform: translateY(-10px) rotate(2deg) scale(1.05);
+}
+
 .timeline-item {
   display: flex;
   align-items: center;
-  background: white;
-  padding: 15px;
-  margin: 15px 0;
-  border-left: 4px solid #117c8f; /* Vertical Line Effect */
   position: relative;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  margin: 40px 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 5;
 }
 
-/* Timeline Number (Circular Indicator) */
-.timeline-number {
-  font-size: 20px;
-  font-weight: bold;
-  background: #117c8f;
+.timeline-item.visible {
+  opacity: 1;
+}
+
+@keyframes fade-in-title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.timeline-box {
+  padding: 30px;
+  width: 75%;
   color: white;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 50%;
-  margin-right: 15px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Content Styling */
-.timeline-content h4 {
+.timeline-item:nth-child(odd) .timeline-box {
+  background: linear-gradient(135deg, #0f8cbc, #0a5a7a);
+  margin-left: 0;
+  margin-right: auto;
+  transform-origin: left;
+}
+
+.timeline-item:nth-child(even) .timeline-box {
+  background: linear-gradient(135deg, #0f8cbc, #0a5a7a);
+  margin-left: auto;
+  margin-right: 0;
+  transform-origin: right;
+}
+
+.timeline-item:nth-child(1) .timeline-box {
+  border: 3px solid #012840;
+  border-radius: 15px 15px 15px 0;
+}
+
+.timeline-item:nth-child(2) .timeline-box {
+  background: linear-gradient(135deg, #0f8cbc, #0a5a7a),
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Ccircle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)" /%3E%3C/svg%3E');
+  background-size: 10px 10px;
+  border-radius: 0 15px 15px 15px;
+}
+
+.timeline-item:nth-child(3) .timeline-box {
+  border-top: 5px solid #012840;
+  border-bottom: 5px solid #012840;
+  border-radius: 10px;
+}
+
+.timeline-item:nth-child(4) .timeline-box {
+  background: linear-gradient(135deg, #0f8cbc 50%, #0a5a7a 50%);
+  border-radius: 15px 0 15px 0;
+}
+
+.timeline-item:hover .timeline-box {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-box h4 {
   margin: 0;
-  color: #333;
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+  font-family: "Playfair Display", serif;
 }
 
-.timeline-content p {
-  margin: 5px 0 0;
-  color: #666;
-  font-size: 16px;
+.timeline-box p {
+  margin: 10px 0 0;
+  font-size: 18px;
+  color: #e0f7fa;
+  line-height: 1.6;
+  font-family: "Playfair Display", serif;
+}
+
+@media (max-width: 768px) {
+  .timeline-box {
+    width: 85%;
+  }
+  .timeline-item:nth-child(even) .timeline-box,
+  .timeline-item:nth-child(odd) .timeline-box {
+    margin: 0 auto;
+  }
+  .timeline-title {
+    font-size: 48px;
+  }
 }
