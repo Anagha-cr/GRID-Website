@@ -8,22 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Rest of your HTML remains unchanged -->
     <header>
         <h1>GRID</h1>
-        <img src="logo.png" alt="" width="24%" height="60%">
-        <h2>Group of Resonance, Innovation, and Development</h2>
+        <img src="profile_photos/logo.png" alt="GRID Logo" width="24%" height="60%">
+        <h2>Group for Resonance, Innovation, and Development</h2>
     </header>
     <nav>
-        <a href="#">HOME</a>
-        <a href="#">About us</a>
-        <a href="#">Core Team</a>
-        <a href="#">Timeline</a>
-        <a href="#">Contact Us</a>
+        <a href="#home" data-section="home">HOME</a>
+        <a href="#about-us" data-section="about-us">About us</a>
+        <a href="#core-team" data-section="core-team">Core Team</a>
+        <a href="#timeline" data-section="timeline">Timeline</a>
+        <a href="#contact-us" data-section="contact-us">Contact Us</a>
     </nav>
 
     <main>
-        <section>
+        <section id="about-us">
             <h3>About us</h3>
             <p>What is GRID?</p>
             <p>GRID stands for Group for Resonance, Innovation, and Development, a student-driven initiative that brings together enthusiasts to work on cutting-edge projects, share ideas, and gain real-world technical skills.</p>
@@ -32,11 +31,151 @@
             <p>Development: Gain hands-on experience through workshops, training, and mentorship, all while building an impressive portfolio.</p>
         </section>
         
-        <section>
+        <section id="core-team">
             <h3>Core Team</h3>
+            <div class="team-tabs">
+                <div class="team-tab active" data-team="leads">Leads</div>
+                <div class="team-tab" data-team="technical">Technical Team</div>
+                <div class="team-tab" data-team="design">Design Team</div>
+                <div class="team-tab" data-team="marketing">Marketing and Outreach Team</div>
+                <div class="team-tab" data-team="event-management">Event Management Team</div>
+                <div class="team-tab" data-team="social-media">Social Media Team</div>
+                <div class="team-tab" data-team="faculty-coordinator">Faculty Coordinator</div>
+            </div>
+
+            <div id="leads" class="team-members active">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Kishan.jpg" width="20%">
+                    <h4>Sai Kishan S</h4>
+                    <p>Core Team and Design Lead</p>
+                    <a href="https://www.linkedin.com/in/saikishan96" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Tamanna.jpg" width="20%">
+                    <h4>Tamanna Ahmad</h4>
+                    <p>Technical Lead</p>
+                    <a href="https://www.linkedin.com/in/tamanna-ahmad-0471a7260/" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Srinivas.jpg" width="20%">
+                    <h4>Srinivas Kulkarni</h4>
+                    <p>Marketing and Outreach Lead</p>
+                    <a href="https://www.linkedin.com/in/srinivas-kulkarni-53ba80210/" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Anchal.png" width="20%">
+                    <h4>Anchal R S Singh</h4>
+                    <p>Event Management Lead</p>
+                    <a href="https://www.linkedin.com/in/anchal-r-s-singh-b85b7a266" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Pranav.jpg" width="20%">
+                    <h4>Pranav Ramesh</h4>
+                    <p>Social Media Lead</p>
+                    <a href="https://www.linkedin.com/in/pranav-ramesh-004201257" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="technical" class="team-members">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Anagha.JPG">
+                    <h4>Anagha C R</h4>
+                    <a href="http://www.linkedin.com/in/anagha-cr-0489482b0" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Aryan.jpg">
+                    <h4>Aryan Kumar</h4>
+                    <a href="http://www.linkedin.com/in/aryan-kumar-ab10b52ab" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Shraddha.JPG">
+                    <h4>Shraddha TR</h4>
+                    <a href="http://www.linkedin.com/in/shraddha-tr-4002aa299" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="design" class="team-members">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Manasa.jpg">
+                    <h4>Manasa K</h4>
+                    <a href="https://www.linkedin.com/in/manasa-k-reddy-96318b309" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Adithya.jpg">
+                    <h4>Adithya Sathish</h4>
+                    <a href="https://www.linkedin.com/in/adithya-sathish-93b912229" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Vishal.png">
+                    <h4>Vishal M</h4>
+                    <a href="https://www.linkedin.com/in/vishal-m-266bb6331" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="marketing" class="team-members">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Srusti.jpg" alt="Marketing Team Member 1">
+                    <h4>Srusti M C</h4>
+                    <a href="https://www.linkedin.com/in/srusti-m-c" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Aditha.jpg" alt="Marketing Team Member 1">
+                    <h4>Aditha D Shetty</h4>
+                    <a href="https://www.linkedin.com/in/aditha-d-shetty-44b8b9337" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Sonika.jpg" alt="Marketing Team Member 1">
+                    <h4>Sonika C</h4>
+                    <a href="https://www.linkedin.com/in/srusti-m-c" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="event-management" class="team-members">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Darshan.jpg" alt="Event Manager 1">
+                    <h4>Darshan Kumar A</h4>
+                    <a href="https://www.linkedin.com/in/darshan-kumar-a-09b375306" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Rida.jpg" alt="Event Manager 1">
+                    <h4>Rida Shariff</h4>
+                    <a href="https://www.linkedin.com/in/rida-shariff" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Arush.jpg" alt="Event Manager 1">
+                    <h4>Arush Radhakrishnan</h4>
+                    <a href="https://www.linkedin.com/in/arush-radhakrishnan-ab0949356" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="social-media" class="team-members">
+                <div class="member-card">
+                    <img src="profile_photos/GRID Yuvraj.jpg" alt="Social Media Member 1">
+                    <h4>Yuvraj A</h4>
+                    <a href="https://www.linkedin.com/in/yuvraj-ashok-9184362b5/" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Iha.jpg" alt="Social Media Member 1">
+                    <h4>Iha Rao</h4>
+                    <a href="https://www.linkedin.com/in/iha-rao" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+                <div class="member-card">
+                    <img src="profile_photos/GRID Bhuvana.jpg" alt="Social Media Member 1">
+                    <h4>Bhuvanashree S</h4>
+                    <a href="https://www.linkedin.com/in/bhuvana-shree-631a6723b/" class="linkedin-btn" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div id="faculty-coordinator" class="team-members">
+                <div class="member-card">
+                    <img src="path/to/faculty-photo.jpg" alt="Faculty Coordinator">
+                    <h4>Mrs. Amitha</h4>
+                    <p></p>
+                </div>
+            </div>
         </section>
 
-        <section class="timeline">
+        <section id="timeline" class="timeline">
             <div class="timeline-bg">
                 <h3 class="timeline-title">TIMELINE</h3>
                 <div class="timeline-container">
@@ -69,11 +208,65 @@
         </section>
     </main>
 
-    <footer>
-        <a href="#">FAQ</a>
-        <a href="#">contact us</a>
-        <a href="#">terms of use</a>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section empty-left-section">
+                <!-- Left-most empty div -->
+            </div>
+
+            <div id="quick-links" class="footer-section navigation">
+                <h4>Quick Links</h4>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link" data-section="home">Home</a>
+                    <a href="#about-us" class="nav-link" data-section="about-us">About</a>
+                    <a href="#core-team" class="nav-link" data-section="core-team">Teams</a>
+                    <a href="#timeline" class="nav-link" data-section="timeline">Timeline</a>
+                    <a href="#contact-us" class="nav-link" data-section="contact-us">Contact Us</a>
+                </div>
+            </div>
+
+            <div id="connect-with-us" class="footer-section social">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/grid.kssem" class="social-link">
+                        <span class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </span>
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/company/grid-kssem" class="social-link">
+                        <span class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </span>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div id="contact-us" class="footer-section contact">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <a href="mailto:grid.kssem@gmail.com" class="contact-link">
+                        <span class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </span>
+                        grid.kssem@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
 </body>
 </html>
